@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="box.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="dimensionality row">
+        <div class="col-sm-4">
+          <p><b>Platform:</b> <span id="platform"></span></p>
+          <p><b>Width:</b> <span id="width"></span></p>
+          <p><b>Height:</b> <span id="height"></span></p>
+          <p><b>Height difference</b> <span id="height-delta"></span></p>
+          <p><b>Width difference:</b> <span id="width-delta"></span></p>
+        </div>
+        <div class="col-sm-4">
+          <p>
+            <b>Suggested text Height:</b>
+            <span id="suggested-text-height"></span>
+          </p>
+          <p>
+            <b>Suggested text Width:</b> <span id="suggested-text-width"></span>
+          </p>
+          <p>
+            <b>Boundingbox Height:</b> <span id="bounding-box-height"></span>
+          </p>
+          <p><b>Boundingbox Width:</b> <span id="bounding-box-width"></span></p>
+          <p><b>Text overflowed:</b> <span id="overflowed"></span></p>
+        </div>
+        <div class="col-sm-4">
+          <p><b>Font Height: </b><span id="font-height"></span></p>
+        </div>
+      </div>
+      <div class="suggested-game-box container">
+        <div class="row inline">
+          <div class="suggested-game-image col-sm-4">
+            <img
+              src="https://ams.cdn.arkadiumhosted.com/assets/2-4-testing-arena-don-t-touch-it-/game/300x300/2e648785-4357-4263-b29d-3299270af906/300x300.jpg"
+            />
+          </div>
+          <div class="suggested-game-text col-sm-8">
+            This is just a test
+            <span class="emphasize">Testing </span>! Fo real fam
+            <div class="suggested-game-button">
+              <button>Play Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="box.js"></script>
+  </body>
+</html>

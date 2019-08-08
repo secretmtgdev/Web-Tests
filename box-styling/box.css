@@ -1,0 +1,60 @@
+.container {
+  font-size: 16px;
+}
+
+.suggested-game-box {
+  height: 125px;
+  padding: 10px;
+  border: 1px solid blue;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 35% !important;
+  min-width: 500px;
+}
+
+.suggested-game-text {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-height: 100px;
+}
+
+.suggested-game-button {
+  float: right;
+  font-size: 10px;
+}
+
+.suggested-game-image img {
+  height: 100px;
+  width: 100px;
+  float: left;
+}
+
+.emphasize {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.inline {
+  display: inline-block;
+}
+
+/******************************************** CUSTOM BOOTSTRAP ********************************************/
+.row {
+  height: 100% !important;
+}
+
+.col-sm-4 {
+  min-width: 100px;
+}
+
+/******************************************** PHONE STYLING ********************************************/
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+}
+
+/******************************************** TABLET STYLING ********************************************/
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+}
+
+/******************************************** DESKTOP STYLING ********************************************/
+@media only screen and (min-width: 1024px) {
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/swfobject/2.2/swfobject.min.js"></script>
+  </head>
+  <body>
+    <script>
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", function() {
+          injectFlashVersion();
+        });
+      } else {
+        injectFlashVersion();
+      }
+
+      function injectFlashVersion() {
+        document.write(swfobject.hasFlashPlayerVersion("9.0.18"));
+      }
+    </script>
+  </body>
+</html>

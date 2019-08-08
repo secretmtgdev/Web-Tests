@@ -1,0 +1,59 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: black;
+}
+
+#fancy-gradient-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 200px;
+  height: 60px;
+  line-height: 60px;
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  text-transform: uppercase;
+  font-family: sans-serif;
+  box-sizing: border-box;
+  background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+  background-size: 400%;
+  border-radius: 35px;
+}
+
+a:hover {
+  animation: shiftBackground 8s linear infinite;
+}
+
+@keyframes shiftBackground {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 400%;
+  }
+}
+
+a:before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  bottom: -5px;
+  left: -5px;
+  right: -5px;
+  z-index: -1;
+  background-size: 400%;
+  border-radius: 40px;
+  background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+a:hover:before {
+  filter: blur(20px);
+  opacity: 1;
+  animation: shiftBackground 8s linear infinite;
+}
