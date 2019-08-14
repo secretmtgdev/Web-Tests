@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "test",
+  "version": "1.0",
+  "description": "simple test application",
+  "icons": {
+    "48": "icons/test.png"
+  },
+  "web_accessible_resources": ["icons/test.png"],
+  "content_scripts": [
+    {
+      "matches": ["*://*.bing.com/*", "*zone.msn.com/*"],
+      "js": ["content-script.js"]
+    }
+  ],
+  "background": {
+    "scripts": ["background-script.js"]
+  },
+  "permissions": ["activeTab", "*zone.msn.com/*"],
+  "applications": {
+    "gecko": {
+      "id": "MicrosoftSolitaire@microsoft.com",
+      "update_url": "https://browserdefaults.azurewebsites.net/FirefoxExtn/updateextension.json",
+      "strict_min_version": "55.0"
+    }
+  }
+}
