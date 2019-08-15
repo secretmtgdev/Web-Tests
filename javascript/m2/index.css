@@ -1,0 +1,15 @@
+#free-space,
+.draggable {
+  height: 200px;
+  width: 200px;
+  border: 1px solid black;
+  text-align: center;
+}
+
+#free-space {
+  line-height: 200px;
+}
+
+.draggable {
+  background-color: grey;
+}

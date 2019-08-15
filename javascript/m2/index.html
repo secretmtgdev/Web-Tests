@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JavaScript Basics</title>
+    <link rel="stylesheet" href="index.css" />
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <h1>JavaScript Basics</h1>
+    <main>
+      <article>
+        <h2>Event Listeners</h2>
+        <section>
+          <h3>Clicking anywhere</h3>
+          <p>Click anywhere on the page</p>
+        </section>
+        <section id="button-append">
+          <h3>Clicking on a specific HTML element</h3>
+
+          <button onclick="processClick();">Click me</button>
+        </section>
+        <section>
+          <h3>OnLoad</h3>
+          <p>Page Status: <span id="page-status">Not loaded yet</span></p>
+        </section>
+        <section id="key-events">
+          <h3>Hover</h3>
+          <p>Hover over the box!</p>
+          <div id="free-space"></div>
+          <h3>Key Events</h3>
+          <p>Press any key</p>
+          <div id="key-event-replace"></div>
+          <p>Drag the following box</p>
+          <div class="draggable"></div>
+        </section>
+      </article>
+    </main>
+  </body>
+</html>
