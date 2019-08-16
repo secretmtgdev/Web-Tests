@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", () => {
+          activateWebcam();
+        });
+      } else {
+        activateWebcam();
+      }
+
+      function activateWebcam() {
+        navigator.mediaDevices.getUserMedia({ video: true }).then(stream => {
+          let video = document.querySelector("#video");
+          video.srcObject = stream;
+          video.play();
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <video width="1000" height="1000" id="video"></video>
+  </body>
+</html>
