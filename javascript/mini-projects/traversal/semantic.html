@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", () => {
+          traverseDOM("BFS");
+        });
+      } else {
+        traverseDOM("DFS");
+      }
+
+      function traverseDOM(alogrithm) {
+        console.log(`USING ${alogrithm} ALGORITHM`);
+        var startNode = document.querySelector("body");
+        var auxiliaryStorage = [];
+        auxiliaryStorage.push(startNode);
+        while (auxiliaryStorage.length > 0) {
+          let currNode =
+            alogrithm === "BFS"
+              ? auxiliaryStorage.shift()
+              : auxiliaryStorage.pop();
+          console.log(currNode);
+          var childNodes = currNode.children;
+          for (let i = 0; i < childNodes.length; i++) {
+            auxiliaryStorage.push(childNodes[i]);
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li>Head navigation item</li>
+        </ul>
+      </nav>
+    </header>
+    <aside>
+      <figure>
+        <img alt="A blank image" />
+        <figcaption>A blank image</figcaption>
+      </figure>
+      <nav>
+        <ul>
+          <li>Navigation list</li>
+        </ul>
+      </nav>
+    </aside>
+    <main>
+      <article>
+        <header><h2>Article Header</h2></header>
+        <section><p>Article Secition</p></section>
+        <section><p>Article Secition</p></section>
+        <section><p>Article Secition</p></section>
+        <footer><p>Article Footer</p></footer>
+      </article>
+    </main>
+    <footer>
+      <details>
+        <summary>Summary of stuff and things</summary>
+      </details>
+    </footer>
+  </body>
+</html>
