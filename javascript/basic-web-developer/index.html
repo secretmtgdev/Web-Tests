@@ -31,6 +31,7 @@
         </ul>
         <h3>JavaScript</h3>
         <ul>
+          <li><a href="#this">this keyword</a></li>
           <li><a href="#prototypes">Prototypes</a></li>
           <li><a href="#classes">Classes</a></li>
           <li><a href="#iife">Immediate Invoked Functions</a></li>
@@ -54,6 +55,9 @@
           <li><a href="#http">HTTP</a></li>
           <li><a href="#web-servers">Web Servers</a></li>
         </ul>
+        <ul>
+          <li><a href="#tips-and-tricks">Tips &amp; Tricks</a></li>
+        </ul>
       </details>
       <section id="html5">
         <h2>HTML5</h2>
@@ -73,21 +77,90 @@
       <section id="css"><h2>CSS</h2></section>
       <section id="javascript">
         <h2>JavaScript</h2>
+        <article id="this">
+          <h3>
+            <strong><em>this</em></strong> keyword
+          </h3>
+          <ul>
+            <li>
+              <strong><em>Arrow function</em></strong
+              >: defined by the lexical environment of the arrow function
+            </li>
+            <li>
+              <strong><em>Function call on object</em></strong
+              >: refers to the current object, in other cases the window object
+              is referenced
+            </li>
+          </ul>
+        </article>
         <article id="prototypes">
           <h3>Prototypes</h3>
-          <p>A template object in which other objects may stem from</p>
+          <ul>
+            <li>
+              A template object in which other objects may stem from. When an
+              object's parent has a prototype this is referred to as a
+              <strong>prototype chain</strong>
+            </li>
+            <li>
+              Properties and methods are bound to the prototype and not the
+              object instance
+            </li>
+            <li>
+              Properties and methods are inherited if and only if they follow
+              the pattern of <em>Object.prototype</em>
+            </li>
+            <li>
+              Every prototype has a constructor which points to the original
+              constructor.
+            </li>
+          </ul>
         </article>
         <article id="classes">
           <h3>Classes</h3>
+          <ul>
+            <li>Utilizes prototype inheritance</li>
+            <li>
+              Body of class is bound by strict mode(turns former mistakes in
+              errors)
+            </li>
+          </ul>
         </article>
         <article id="iife">
           <h3>Immediate Invoked Functions</h3>
         </article>
         <article id="closures">
           <h3>Closures</h3>
+          <ul>
+            <li>
+              <strong><em>Lexical scoping</em></strong
+              >: inner function having access to variables of the outer function
+            </li>
+            <li>
+              <strong><em>Closure</em></strong
+              >: Variable assigned to a functions inner function which maintains
+              lexical scoping
+            </li>
+            <li>Have access to Local, Global, and outer function scoping</li>
+            <li>
+              In a for loop with inner closures, the let keyword binds each
+              closure to the current block, without this each closure in the
+              loop will have the same lexical environment
+            </li>
+            <li>
+              Use closures wisely as they are costly with regards to performance
+            </li>
+          </ul>
         </article>
         <article id="module-pattern">
           <h3>Module Pattern</h3>
+          <ul>
+            <li>Utilizing closures to ensure privacy of data</li>
+            <li>
+              <strong><em>Module</em></strong
+              >: small unit of reusable, maintainable, non nampespace polluting
+              code
+            </li>
+          </ul>
         </article>
         <article id="hoisting">
           <h3>Hoisting</h3>
@@ -106,6 +179,12 @@
         </article>
         <article id="callbacks">
           <h3>Callbacks</h3>
+          <ul>
+            <li>
+              Function passed into another function that is executed at some
+              point in time
+            </li>
+          </ul>
         </article>
         <article id="ajax">
           <h3>Ajax</h3>
@@ -127,10 +206,163 @@
         <h2>Node.js</h2>
         <article id="http">
           <h3>HTTP</h3>
+          <ul>
+            <li>
+              <strong><em>Network</em></strong
+              >: Pysical linkage of computers that share data
+            </li>
+            <li>
+              <strong><em>Internet</em></strong
+              >: Global network of networks
+            </li>
+            <li>
+              <strong><em>Web</em></strong
+              >: Way of accessing sources over the internet
+            </li>
+            <li>
+              <strong><em>Gateway</em></strong
+              >: Links your computer to the internet
+            </li>
+            <li>
+              <strong><em>Proxy</em></strong
+              >: Used with navigation over the web, can act like a gateway or
+              cache
+            </li>
+            <li>
+              <strong><em>Cache</em></strong
+              >: Stores HTTP responses to quicken HTTP requests
+            </li>
+            <li>
+              <strong><em>Web Server</em></strong
+              >: Serves documents based off of requests
+            </li>
+            <li>
+              <strong><em>TCP</em></strong
+              >: Connection is made and kept alive as long as two ends are still
+              exchanging messages.
+            </li>
+          </ul>
         </article>
         <article id="web-servers">
           <h3>Web Servers</h3>
         </article>
+      </section>
+      <section id="tips-and-tricks">
+        <h2>Tips &amp; Tricks</h2>
+        <section id="odds-and-ends">
+          <h3>Odds &amp; Ends</h3>
+          <ul>
+            <li>
+              <strong><em>Coercion</em></strong
+              >: The process of converting one type to another
+            </li>
+            <li>
+              <strong><em>==</em></strong
+              >: check value, coercion is allowed
+            </li>
+            <li>
+              <strong><em>===</em></strong
+              >: check value &amp; type, no coersion
+            </li>
+            <li>
+              <strong><em>use strict</em></strong
+              >: Throws errors on mistakes, such as declaring a variable without
+              the var keyword within a function
+            </li>
+            <li>
+              <strong><em>null</em></strong
+              >Object is not available
+            </li>
+            <li>
+              <strong><em>undefined</em></strong
+              >Object is not initialized
+            </li>
+            <li>
+              <strong><em>Prototype Design Pattern</em></strong
+              >: Creates objects wwith values copied from a prototype
+            </li>
+            <li>
+              <strong><em>Isomorphism</em></strong
+              >: For every character in string A there is a corresponding
+              character in String B that matches the frequency
+            </li>
+            <li>
+              <strong><em>Reduce</em></strong
+              >: takes in function, with values cumulative/currElement, as
+              parameter and executes the given function, accumilating the
+              elements
+            </li>
+            <li>
+              <strong><em>Reveal Module Pattern</em></strong
+              >: Module pattern with certain data/methods returned as an object
+            </li>
+            <li>
+              <strong><em></em></strong>
+            </li>
+            <li>
+              <strong><em></em></strong>
+            </li>
+            <li>
+              <strong><em></em></strong>
+            </li>
+            <li>
+              <strong><em></em></strong>
+            </li>
+          </ul>
+        </section>
+        <section id="dev-tools">
+          <h3>Developing through the browser</h3>
+          <ul>
+            <li>
+              <strong><em>Ctrl + alt + i</em></strong> - opens up the developer
+              tools in the current browser
+            </li>
+            <li>
+              <strong><em>F8</em></strong> - allows you to step through the
+              debugger in developer tools
+            </li>
+            <li>
+              <strong><em>F5</em></strong> - refreshes the current page
+            </li>
+            <li>
+              <strong><em>localStorage.clear()</em></strong> - clears all
+              information stored in local storage
+            </li>
+            <li>
+              <strong><em>sessionStorage.clear()</em></strong> - clears all
+              informaiton stored in the current session
+            </li>
+          </ul>
+        </section>
+        <section id="code-editor">
+          <h3>Developing with VS code</h3>
+          <ul>
+            <li>
+              <strong
+                ><em>alt + click</em> - useful for modifying multiple portions
+                of a file</strong
+              >
+            </li>
+            <li>
+              <strong><em>ctrl + x</em> - cuts a segment</strong>
+            </li>
+            <li>
+              <strong><em>ctrl + c</em> - copys a segment</strong>
+            </li>
+            <li>
+              <strong><em>ctrl + v</em> - pastes a cut/copied segment</strong>
+            </li>
+          </ul>
+        </section>
+        <section id="coding-practices">
+          <h3>Coding Practices</h3>
+          <ul>
+            <li>
+              Make code modular, each function serves one purpose. Don't abuse
+              this.
+            </li>
+          </ul>
+        </section>
       </section>
     </main>
     <footer>
@@ -144,6 +376,21 @@
         </li>
         <li><a href="http://techsith.com/">TechSith</a></li>
         <li><a href="https://developer.mozilla.org/en-US/">MDN</a></li>
+        <li><a href="https://geeksforgeeks.org">GeeksForGeeks</a></li>
+        <li><a href="https://www.webopedia.com/">Webopedia</a></li>
+        <li>
+          <a href="https://searchnetworking.techtarget.com/definition/TCP"
+            >Tech Target</a
+          >
+        </li>
+        <li><a href="https://en.wikipedia.org">Wikipedia</a></li>
+        <li><a href="w3schools.com">W3Schools</a></li>
+        <li>
+          <a
+            href="https://dev.to/aershov24/top-26-javascript-interview-questions-i-wish-i-knew-26k1"
+            >Dev.to</a
+          >
+        </li>
       </ul>
     </footer>
   </body>
