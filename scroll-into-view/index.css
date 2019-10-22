@@ -1,0 +1,40 @@
+.infinity-block {
+    display: flex;
+    flex-direction: row; 
+}
+
+.infinity-cell {
+    flex: 1;
+    box-sizing: border-box;
+    border: 1px solid black;
+    height:400px;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.infinity-cell:first-of-type {
+    background-color: red;
+}
+
+.infinity-cell:nth-child(2n) {
+    background-color: green;
+}
+
+.infinity-cell:nth-child(3n) {
+    background-color: blue;
+}
+
+.fadeIn {
+    visibility: visible;
+    animation: fadeIn 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
