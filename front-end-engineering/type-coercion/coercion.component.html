@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <!-- Style -->
+        <style>
+            h1 {
+                text-align: center;
+            }
+        </style>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <!-- View --> 
+        <main>
+            <h1>Coercion in JavaScript</h1>
+            <section>
+                <h2>Implicit &amp; Explicit</h2>
+                <ul>
+                    <li>Implicit: Values being converted automatically</li>
+                    <li>Explicit: Declaring the type to cast to</li>
+                    <li>===: Checks type and value of elements</li>
+                    <li>==: Checks value after type coercion to make elements of the same type</li>
+                </ul>
+            </section> 
+            <section>
+                <h2>Conversion</h2>
+                <ul>
+                    <li>!!x: Converts x into a boolean (falsy || truthy)</li>
+                    <li>Number(x): Explicit coercion to string</li>
+                    <li>x + '': Implicit coercion to string</li>
+                    <li>Boolean(x): Explicit coercion to boolean</li>
+                    <li>if(x), !!x, x || 'test': Implicit coercion to boolean</li>
+                    <li>|| and &amp;&amp;: Convert to boolean internally, but return the later value</li>
+                    <li>== w/null &amp; undefined: Does not cause a numberic conversion</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Instanceof</h2>
+                <p>Checks to see of the existence of prototype property in current objects chain</p>
+                <p>Always returns a boolean</p>
+            </section>
+            <section>
+                <h2>Typeof</h2>
+                <p>Returns a string representing the type</p>
+            </section>
+            <section>
+                <h2>Object.prototype.toString()</h2>
+                <p>Returns [object type]</p>
+            </section>
+        </main>
+
+        <!-- Control -->
+        <script defer>
+            (function(){
+                if(document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', () => {
+                        testCoercion();
+                    });
+                } else {
+                    testCoercion();
+                }
+
+                function testCoercion() {
+                    console.assert('2' == 2, {msg:'Type coercion failing'});
+                    console.assert('2' === 2, {msg: 'No type coercion due to strict testing'});
+                    console.assert('2' || 2, {msg: 'Implicit coercion to boolean failed'})
+                    console.assert(Boolean(2), {msg:'Explicit coercion did not work'});
+                    console.assert(String(2) === '2', {msg: 'Explicit coercion did not strictly convert the type to that expected by the implicit coercion'})
+                    console.assert(('test' && 123) === Number(123), {msg: 'Internal boolean conversion not working as expected'})
+                    console.assert(('test' || 123) === String('test'), {msg: 'Internal boolean conversion not working as expected'})                    
+                    console.assert(!!(null == 0), {msg:'Can not convert null to numeric value'})
+                    console.assert(!!(undefined == 0), {msg:'Can not convert undefined to numeric value'})
+                    console.assert(NaN === NaN, {msg: "NaN is equal to nothing"})
+                    console.assert(typeof(NaN) !== 'number', {msg: 'NaN is of the type number'})
+                    console.assert(typeof(null) !== 'object', {msg: 'Null is an object'})
+                    
+                    let toString = Object.prototype.toString;
+                    console.assert(toString.call(new Date) === '[object Date]', {msg:'Date object is of the class Date'})
+                    console.assert(toString.call(new String) === '[object String]', {msg:'String object is of the class String'})
+                    console.assert(toString.call(new Date) === '[object Date]', {msg:'Null object is of the class Null'})
+                    console.assert(toString.call(new Date) === '[object Date]', {msg:'Undefined object is of the class Undefined'})
+                }
+            })();
+        </script>
+    </body>
+</html>
+
